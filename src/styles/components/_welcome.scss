@@ -16,16 +16,16 @@
       align-self: center;
       padding: 10px;
       font-size: 1.2em;
-      color: $space-color;
-      background-color: $primary-color;
+      background-color: $anchor-color;
+      color: $accent-color;
       border: none;
       cursor: pointer;
       transition: all 0.5s linear;
     }
 
     .create-now:hover {
-      background-color: $anchor-color;
-      color: $accent-color;
+      color: $space-color;
+      background-color: $primary-color;
     }
   }
 }

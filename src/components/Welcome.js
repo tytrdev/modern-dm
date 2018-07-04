@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as actions from '../actions/auth';
-import { toggleProjection } from '../actions/geography';
+import * as Auth from '../actions/auth';
+import * as Geography from '../actions/geography';
 import BlankWorld from './geography/BlankWorld';
 
 const Welcome = ({
@@ -17,7 +17,9 @@ const Welcome = ({
       </span>
 
       <button onClick={toggleProjection} className="create-now">
-        Start creating your first world now
+        <span>
+          Start creating your first world now
+        </span>
       </button>
     </div>
   </div>
@@ -34,10 +36,13 @@ const mapStateToProps = state => ({
   user: state.user,
 });
 
+const mapDispatchToProps = dispatch => ({
+  login: () => dispatch(Auth.login(dispatch)),
+  logout: () => dispatch(Auth.logout(dispatch)),
+  toggleProjection: () => dispatch(Geography.toggleProjection(dispatch)),
+});
+
 export default connect(
   mapStateToProps,
-  [
-    ...actions,
-    toggleProjection,
-  ],
+  mapDispatchToProps,
 )(Welcome);

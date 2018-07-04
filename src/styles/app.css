@@ -90,14 +90,14 @@ html, body, #root {
       align-self: center;
       padding: 10px;
       font-size: 1.2em;
-      color: #FFFFFF;
-      background-color: #6457A6;
+      background-color: #312F2F;
+      color: #70e7b8;
       border: none;
       cursor: pointer;
       transition: all 0.5s linear; }
     .welcome .welcome-banner .create-now:hover {
-      background-color: #312F2F;
-      color: #70e7b8; }
+      color: #FFFFFF;
+      background-color: #6457A6; }
 
 .welcome-blank-world {
   position: absolute;
