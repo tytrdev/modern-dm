@@ -3,6 +3,8 @@ import { Auth, GoogleProvider } from '../firebase';
 
 export const initUser = () => async (dispatch) => {
   Auth.onAuthStateChanged((user) => {
+    // Only dispatch event if user is defined
+    // Logout will handle nullifying user
     if (user) {
       dispatch({
         type: 'LOGIN',

@@ -12,6 +12,8 @@ module.exports = {
     "no-underscore-dangle": "off",
     "no-plusplus": "off",
     "camelcase": "off",
-    "no-useless-constructor": "off"
+    "no-useless-constructor": "off",
+    "class-methods-use-this": "off",
+    "import/prefer-default-export": "off",
   }
 };

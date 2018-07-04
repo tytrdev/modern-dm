@@ -4,11 +4,9 @@ html, body, #root {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif; }
 
-App {
-  width: 100%;
-  height: 100%; }
-
 .flex {
+  width: 100%;
+  height: 100%;
   display: flex; }
   .flex.columns {
     flex-direction: column; }
@@ -76,4 +74,56 @@ App {
       color: #312F2F;
       border: 1px solid #312F2F; }
     .app-bar .app-actions .active-user {
-      color: #7CC7A9; }
+      color: #70e7b8; }
+
+.welcome {
+  background-color: #312F2F; }
+  .welcome .welcome-banner {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    z-index: 1; }
+    .welcome .welcome-banner .header {
+      color: #FFFFFF;
+      font-size: 2em; }
+    .welcome .welcome-banner .create-now {
+      align-self: center;
+      padding: 10px;
+      font-size: 1.2em;
+      color: #FFFFFF;
+      background-color: #6457A6;
+      border: none;
+      cursor: pointer;
+      transition: all 0.5s linear; }
+    .welcome .welcome-banner .create-now:hover {
+      background-color: #312F2F;
+      color: #70e7b8; }
+
+.welcome-blank-world {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%; }
+
+.stroke {
+  fill: none;
+  stroke: #000;
+  stroke-width: 3px; }
+
+.fill {
+  fill: #312F2F; }
+
+.graticule {
+  fill: none;
+  stroke: #777;
+  stroke-width: .5px;
+  stroke-opacity: .5; }
+
+.land {
+  fill: #222; }
+
+.boundary {
+  fill: none;
+  stroke: #fff;
+  stroke-width: .5px; }
