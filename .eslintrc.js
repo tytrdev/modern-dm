@@ -15,5 +15,6 @@ module.exports = {
     "no-useless-constructor": "off",
     "class-methods-use-this": "off",
     "import/prefer-default-export": "off",
+    "max-len": "off",
   }
 };

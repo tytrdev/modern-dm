@@ -4,12 +4,18 @@ html, body, #root {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif; }
 
+.app-body {
+  position: relative;
+  margin-top: 50px; }
+
 .flex {
   width: 100%;
   height: 100%;
   display: flex; }
   .flex.columns {
     flex-direction: column; }
+  .flex.wrap {
+    flex-wrap: wrap; }
   .flex.between {
     justify-content: space-between; }
   .flex .center {
@@ -26,19 +32,27 @@ html, body, #root {
 .form {
   align-self: center; }
 
+/* Notifications */
+.dark-toast {
+  background-color: #312F2F;
+  color: #8bffd1; }
+
 .app-bar {
+  position: fixed;
+  z-index: 1;
   display: flex;
   width: 100%;
   height: 50px;
-  background-color: #6457A6; }
+  background-color: #312F2F;
+  border-bottom: 1px solid #FFFFFF; }
   .app-bar a {
+    color: #8bffd1;
     transition: color 0.5s ease; }
   .app-bar a:hover {
-    color: #312F2F; }
+    color: #AEBBFF; }
   .app-bar .logo-link {
     margin-left: 15px;
     font-size: 2em;
-    color: #FFFFFF;
     align-self: center; }
   .app-bar .brand-link {
     margin-left: 15px;
@@ -59,24 +73,25 @@ html, body, #root {
       cursor: pointer;
       width: 150px;
       padding: 10px;
-      background-color: #6457A6;
-      color: #FFFFFF;
+      background-color: #312F2F;
+      color: #8bffd1;
       border: 1px solid #FFFFFF; }
     .app-bar .app-actions .logout-button {
       cursor: pointer;
       width: 150px;
       padding: 10px;
-      background-color: #6457A6;
-      color: #FFFFFF;
+      background-color: #312F2F;
+      color: #8bffd1;
       border: 1px solid #FFFFFF;
       margin-left: 10px !important; }
     .app-bar .app-actions .login-button:hover, .app-bar .app-actions .logout-button:hover {
-      color: #312F2F;
-      border: 1px solid #312F2F; }
+      color: #FFFFFF;
+      background-color: #6457A6; }
     .app-bar .app-actions .active-user {
-      color: #70e7b8; }
+      color: #8bffd1; }
 
 .welcome {
+  position: relative;
   background-color: #312F2F; }
   .welcome .welcome-banner {
     display: flex;
@@ -91,7 +106,7 @@ html, body, #root {
       padding: 10px;
       font-size: 1.2em;
       background-color: #312F2F;
-      color: #70e7b8;
+      color: #8bffd1;
       border: none;
       cursor: pointer;
       transition: all 0.5s linear; }
@@ -99,31 +114,107 @@ html, body, #root {
       color: #FFFFFF;
       background-color: #6457A6; }
 
+.dashboard {
+  background-color: #312F2F; }
+
+.dashboard-heading {
+  margin: 0;
+  margin-top: 10px;
+  text-align: center;
+  color: #FFFFFF; }
+
+.world-tile {
+  border: 1px solid #FFFFFF;
+  position: relative;
+  min-width: 150px;
+  height: 200px;
+  background: #312F2F;
+  padding: 10px;
+  margin: 10px;
+  color: #FFFFFF;
+  font-size: 1.5em;
+  text-align: center;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 1s linear;
+  z-index: 1; }
+  .world-tile .world-tile-name {
+    margin-top: 25px; }
+
+.world-tile:hover {
+  border-color: #8bffd1;
+  color: #8bffd1; }
+  .world-tile:hover .stroke {
+    fill: none;
+    stroke: #000;
+    stroke-width: 3px; }
+  .world-tile:hover .fill {
+    fill: #312F2F; }
+  .world-tile:hover .graticule {
+    fill: none;
+    stroke: #777;
+    stroke-width: .5px;
+    stroke-opacity: .5; }
+  .world-tile:hover .land {
+    fill: #8bffd1; }
+  .world-tile:hover .boundary {
+    fill: none;
+    stroke: #312F2F;
+    stroke-width: 1px; }
+
 .welcome-blank-world {
   position: absolute;
+  padding: 0;
+  margin: 0;
   top: 0;
   left: 0;
+  width: 100%;
   height: 100%;
-  width: 100%; }
+  z-index: -1;
+  background-color: #312F2F; }
+  .welcome-blank-world svg {
+    width: 100%;
+    height: 99%;
+    transition: all 2s linear; }
+    .welcome-blank-world svg.flat {
+      width: 50%;
+      height: 50%; }
+
+.world-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: all 2s linear; }
+  .world-svg.flat {
+    width: 50%;
+    height: 50%; }
 
 .stroke {
   fill: none;
   stroke: #000;
-  stroke-width: 3px; }
+  stroke-width: 3px;
+  transition: all 1s linear; }
 
 .fill {
-  fill: #312F2F; }
+  fill: #312F2F;
+  transition: all 1s linear; }
 
 .graticule {
   fill: none;
   stroke: #777;
   stroke-width: .5px;
-  stroke-opacity: .5; }
+  stroke-opacity: .5;
+  transition: all 1s linear; }
 
 .land {
-  fill: #222; }
+  fill: #222;
+  transition: all 1s linear; }
 
 .boundary {
   fill: none;
   stroke: #fff;
-  stroke-width: .5px; }
+  stroke-width: .5px;
+  transition: all 0.5s linear; }

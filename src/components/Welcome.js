@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as Auth from '../actions/auth';
 import * as Geography from '../actions/geography';
-import BlankWorld from './geography/BlankWorld';
+import World from './world/World';
 
 const Welcome = ({
   user, login, logout, toggleProjection,
 }) => (
   <div className="flex welcome">
-    <BlankWorld></BlankWorld>
+    <World center target={'.welcome'}></World>
 
     <div className="welcome-banner">
       <span className="header">
@@ -18,7 +18,7 @@ const Welcome = ({
 
       <button onClick={toggleProjection} className="create-now">
         <span>
-          Start creating your first world now
+          Start creating your world now!
         </span>
       </button>
     </div>

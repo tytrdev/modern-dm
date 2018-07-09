@@ -5,6 +5,11 @@ html, body, #root {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.app-body {
+  position: relative;
+  margin-top: 50px;
+}
+
 // Basic flex container
 .flex {
   width: 100%;
@@ -14,6 +19,10 @@ html, body, #root {
   // flex column
   &.columns {
     flex-direction: column;
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
   }
 
   // flex between
@@ -39,4 +48,18 @@ html, body, #root {
 
 .form {
   align-self: center;
+}
+
+/* Notifications */
+.toast-container {
+
+}
+
+.dark-toast {
+  background-color: $anchor-color;
+  color: $accent-color;
+}
+
+.toast-progress {
+
 }

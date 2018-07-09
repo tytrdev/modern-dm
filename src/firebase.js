@@ -1,5 +1,5 @@
-import firebase from 'firebase';
-// import 'firebase/firestore';
+import firebase from 'firebase/dist/index.cjs';
+// import 'firebase/firestore'; // Might become useful
 
 const config = {
   apiKey: 'AIzaSyDwnaZlbhg5cwz-kj1VgBrNEwirhXhXO5Y',
@@ -12,10 +12,14 @@ const config = {
 
 firebase.initializeApp(config);
 
+// Firebase
 export default firebase;
 
-export const DB = firebase.database().ref();
-export const Todos = DB.child('todos');
-
+// Auth
 export const GoogleProvider = new firebase.auth.GoogleAuthProvider();
 export const Auth = firebase.auth();
+
+// Schemas
+export const DB = firebase.database().ref();
+export const Todos = DB.child('todos');
+export const Worlds = DB.child('worlds');

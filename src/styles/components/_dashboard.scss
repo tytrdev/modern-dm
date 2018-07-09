@@ -1,0 +1,63 @@
+.dashboard {
+  background-color: $anchor-color;
+}
+
+.dashboard-heading {
+  margin: 0;
+  margin-top: 10px;
+  text-align: center;
+  color: $space-color;
+}
+
+.world-tile {
+  border: 1px solid $space-color;
+  position: relative;
+  min-width: 150px;
+  height: 200px;
+  background: $anchor-color;
+  padding: 10px;
+  margin: 10px;
+  color: $space-color;
+  font-size: 1.5em;
+  text-align: center;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 1s linear;
+  z-index: 1;
+
+  .world-tile-name {
+    margin-top: 25px;
+  }
+}
+
+.world-tile:hover {
+  border-color: $accent-color;
+  color: $accent-color;
+
+  .stroke {
+    fill: none;
+    stroke: #000;
+    stroke-width: 3px;
+  }
+  
+  .fill {
+    fill: $anchor-color;
+  }
+  
+  .graticule {
+    fill: none;
+    stroke: #777;
+    stroke-width: .5px;
+    stroke-opacity: .5;
+  }
+  
+  .land {
+    fill: $accent-color;
+  }
+  
+  .boundary {
+    fill: none;
+    stroke: $anchor-color;
+    stroke-width: 1px;
+  }
+}

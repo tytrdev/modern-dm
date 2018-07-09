@@ -5,30 +5,45 @@ import { connect } from 'react-redux';
 import {
   BrowserRouter as Router, Route, Switch, Redirect,
 } from 'react-router-dom';
-// import Header from './Header';
+import Header from './Header';
 import Welcome from './Welcome';
+import Dashboard from './dashboard/Dashboard';
 import * as actions from '../actions/auth';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = ({ user, initUser }) => {
-  initUser();
+  const localUser = localStorage.getItem('user');
+  const authedUser = user || JSON.parse(localUser);
+  initUser(); // TODO: Get rid of this
 
   return (
     <Router>
       <div className="flex columns">
-        <ToastContainer />
+        {/* Notification Container */}
+        <ToastContainer
+          className='toast-container'
+          toastClassName="dark-toast"
+          progressClassName='toast-progress'/>
+        <Header></Header>
 
-        {/* Redirect guest users to the welcome page */}
-        {!user
-          && <Redirect to='/welcome' />
-        }
 
-        {/* Render the welcome landing page */}
-        <Route exact path="/" component={Welcome} />
-        <Route exact path="/welcome" component={Welcome} />
+        <div className="flex app-body">
+          {/* Landing page for all users */}
+          <Route path="/welcome" component={Welcome} />
 
-        {/* <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} /> */}
+          {/* Redirect guest users to the landing page */}
+          {!authedUser
+            && <Redirect to='/welcome' />
+          }
+
+          {/* Authenticated users can see these pages */}
+          {authedUser
+            && <Switch>
+              <Route exact path="/" component={Dashboard} />
+              <Route path="/dashboard" component={Dashboard} />
+            </Switch>
+          }
+        </div>
       </div>
     </Router>
   );
